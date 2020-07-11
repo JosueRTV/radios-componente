@@ -1,0 +1,58 @@
+<!-- <form [formGroup]="profileForm">
+
+    <label>
+        First Name:
+        <input type="text" formControlName="firstName">
+    </label>
+
+    <label>
+        Last Name:
+        <input type="text" formControlName="lastName">
+    </label>
+
+    <div formGroupName="address">
+        <h3>Address</h3>
+
+        <label>
+            Street:
+            <input type="text" formControlName="street">
+        </label>
+
+        <label>
+            City:
+            <input type="text" formControlName="city">
+        </label>
+
+        <label>
+            State:
+            <input type="text" formControlName="state">
+        </label>
+
+        <label>
+            Zip Code:
+            <input type="text" formControlName="zip">
+        </label>
+    </div>
+</form> -->
+<br> <br> <br>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input type="radio" id="laca" value="lacaUv" formControlName="procesos">
+    <label for="laca">laca UV</label><br>
+    <div formGroupName="lacaOptions">
+        <input type="radio" id="fren" value="frente" formControlName="frente">
+        <label for="fren">Frente</label><br>
+        <input type="radio" id="dor" value="dorzo" formControlName="frente">
+        <label for="dor">Dorzo</label><br>
+    </div>
+    <input type="radio" id="troq" value="troquelado" formControlName="procesos">
+    <label for="troq">Troquelado</label><br>
+    <input type="radio" id="lami" value="laminado" formControlName="procesos">
+    <label for="lami">Laminado</label>
+    <!-- <div formGroupName="laminadoOptions">
+        <input type="radio" id="poli" value="polecienoMate" formControlName="poliMate">
+        <label for="poli">Policieno mate</label><br>
+        <input type="radio" id="lami2" value="laminado" formControlName="laminado">
+        <label for="lami2">Laminado</label><br>
+    </div> -->
+    <button type="submit">Submit</button>
+</form>
