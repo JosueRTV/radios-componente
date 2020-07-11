@@ -1,0 +1,10 @@
+<!-- <form [formGroup]="generalData" >
+    <input type="text" formControlName="firstName">
+    <app-hijo formControlName="firstName"></app-hijo>
+    <input type="submit" value="Submit">
+</form> -->
+<form [formGroup]="generalData" (ngSubmit)="onSubmit()">
+    <app-input-control [myLabel]="'Label de mi input'" formControlName="pruebaInput"></app-input-control>
+    <button type="submit" [disabled]="!generalData.valid">Submit</button>
+</form>
+<p>Valor: {{ myText }} </p>

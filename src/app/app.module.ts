@@ -4,15 +4,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RadiosComponent } from './formularios/radios/radios.component';
+import { PadreComponent } from './formularios/padre/padre.component';
+import { HijoComponent } from './formularios/hijo/hijo.component';
+
+import { InputControlModule } from './input-control/input-control.module'
 
 @NgModule({
   declarations: [
     AppComponent,
-    RadiosComponent
+    RadiosComponent,
+    PadreComponent,
+    HijoComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputControlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
