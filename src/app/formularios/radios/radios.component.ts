@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, forwardRef } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-radios',
@@ -9,10 +9,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RadiosComponent implements OnInit {
 
-  profileForm = this.fb.group({
+  procesosForm = this.fb.group({
     procesos: ['', [Validators.required]] ,
     lacaOptions: this.fb.group({
-      frente: [''],
+      options: [''],
     //   dorzo: ['']
     }),
     // troquelado: ['', [Validators.required]],
@@ -22,50 +22,36 @@ export class RadiosComponent implements OnInit {
     //   dorzo: [''],
     //   laminado: ['']
     // }),
+
+    // procesosForm = new FormGroup({
+    //   procesos: new FormControl(),
+    //   lacaOptions: new FormGroup({
+    //     frente : new FormControl()
+    //   })
   });
 
-  onSubmit(){
-    console.log(this.profileForm);
+  // });
+
+  onSubmit() {
+    console.log(this.procesosForm);
   }
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.onChanges();
+    // this.onChanges();
+    this.changeLacaOptions();
   }
-  onChanges() {
-    // this.profileForm.valueChanges.subscribe(val => {
-    //   console.log(this.profileForm.value.lacaOptions.frente !== '');
-    //   if(this.profileForm.value.lacaOptions){
-    //     this.profileForm.patchValue({
-    //           procesos: ''
-    //         });
-    //   }
-    // });
 
-
-    this.profileForm.get('lacaOptions').valueChanges.subscribe(val => {
+  changeLacaOptions(){
+    this.procesosForm.get('lacaOptions').valueChanges.subscribe(val => {
       // console.log(this.profileForm.value.lacaOptions.frente);
       console.log('Soy Laca');
-      console.log(this.profileForm);
-      this.profileForm.patchValue({
+      console.log(this.procesosForm);
+      this.procesosForm.patchValue({
         procesos: 'lacaUv'
       });
     });
-
-    // this.profileForm.get('procesos').valueChanges.subscribe(val => {
-    //   // console.log(this.profileForm.value.lacaOptions.frente);
-    //   console.log('Soy procesos');
-    //   console.log(this.profileForm);
-    // });
   }
 
-}
-
-
-interface sijaala{
-  procesos: string;
-  lacaOptions: {
-    frente: string;
-  }
 }

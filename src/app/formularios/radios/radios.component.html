@@ -35,13 +35,13 @@
     </div>
 </form> -->
 <br> <br> <br>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="procesosForm" (ngSubmit)="onSubmit()">
     <input type="radio" id="laca" value="lacaUv" formControlName="procesos">
-    <label for="laca">laca UV</label><br>
+    <label for="laca"> UlacaV</label><br>
     <div formGroupName="lacaOptions">
-        <input type="radio" id="fren" value="frente" formControlName="frente">
+        <input type="radio" id="fren" value="frente" formControlName="options">
         <label for="fren">Frente</label><br>
-        <input type="radio" id="dor" value="dorzo" formControlName="frente">
+        <input type="radio" id="dor" value="dorzo" formControlName="options">
         <label for="dor">Dorzo</label><br>
     </div>
     <input type="radio" id="troq" value="troquelado" formControlName="procesos">
